@@ -5,6 +5,7 @@ namespace Grocery.Core.Models
 {
     public partial class BestSellingProducts : Model
     {
+        public string ProductName { get; set; }
         public int Stock { get; set; }
         [ObservableProperty]
         public int nrOfSells;
@@ -13,7 +14,8 @@ namespace Grocery.Core.Models
 
         public BestSellingProducts(int productId, string name, int stock, int nrOfSells, int ranking) : base(productId, name)
         {
-            Stock=stock;
+            ProductName=name;
+            Stock =stock;
             NrOfSells=nrOfSells;
             Ranking=ranking;
         }
